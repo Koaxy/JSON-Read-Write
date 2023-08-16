@@ -39,7 +39,7 @@ namespace KoaxyUtils
 		else return "";
 	}
 
-	std::string path = get_path() + "\\NearCry\\JsonSettings.json";
+	std::string path = "C:/YourPath";
 
 	std::filesystem::path m_path{};
 	std::ofstream m_file{};
@@ -47,7 +47,7 @@ namespace KoaxyUtils
 	void MagicFunc(std::string JSON)
 	{
 		m_path.append(path);
-
+                // Write to path.
 		m_file.open(m_path, std::ios_base::out | std::ios_base::trunc);
 		m_file << JSON;
 		m_file.close();
