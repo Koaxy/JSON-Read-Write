@@ -101,7 +101,9 @@ namespace KoaxyJSON
 	void ReadValue(const std::string& key, T value) {
 		std::string fileToRead = KoaxyUtils::ReadFile(KoaxyUtils::path);
 		TinyJson jsonRead;
-		jsonRead.ReadJson(fileToRead);
+		if (jsonRead.ReadJson(fileToRead)){
+			std::printf("An error occured Reading the file path.\n");
+		}
 
 		if (value == JSONType::STRING) { // 0
 			jsonRead.Get<std::string>(key);
